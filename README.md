@@ -48,12 +48,7 @@ You will need **ALL** of the dependencies necessary to run, **PLUS**:
 
 Just run:
 
-> flatpak-builder --install \
-                  --user \
-                  --ccache \
-                  --force-clean \
-                  leagueoflegends \
-                  com.riotgames.League_of_Legends.json
+> flatpak-builder --install --user --ccache --force-clean leagueoflegends com.riotgames.League_of_Legends.json
 
 in your favorite terminal emulator.
 
