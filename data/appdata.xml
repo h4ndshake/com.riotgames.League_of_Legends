@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Rafael Julio <rafael_julio@protonmail.com> -->
+<component type="desktop-application">
+  <id>com.riotgames.League_of_Legends</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>LGPL-3.0-or-later</project_license>
+  <name>League of Legends</name>
+  <summary>Join the League, become a legend.</summary>
+  <icon type="stock" />
+
+  <launchable type="desktop-id">com.riotgames.League_of_Legends.desktop</launchable>
+  
+  <provides>
+    <binary>league_of_legends.sh</binary>
+  </provides>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+
+  <requires>
+    <memory>1024</memory>
+  </requires>
+
+  <recommends>
+    <id version="0.11.5" compare="ge">org.freedesktop.Flatpak</id>
+    <memory>4096</memory>
+  </recommends>
+
+  <releases></releases>
+
+  <description>
+    <h1>Outplay, outthink</h1>
+    <p>
+      Whether you're playing Solo or Co-op with friends, League of Legends is a 
+      highly competitive, fast paced action-strategy game designed for those 
+      who crave a hard fought victory.
+    </p>
+  </description>
+
+  <categories>
+    <category>Game</category>
+    <category>ActionGame</category>
+    <category>StrategyGame</category>
+  </categories>
+  
+  <url type="homepage">https://leagueoflegends.com</url>
+  <url type="help">https://support.riotgames.com</url>
+  <developer_name>Riot Games</developer_name>
+  
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">moderate</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">moderate</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">mild</content_attribute>
+    <content_attribute id="sex-homosexuality">mild</content_attribute>
+    <content_attribute id="sex-prostitution">mild</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">moderate</content_attribute>
+    <content_attribute id="language-profanity">intense</content_attribute>
+    <content_attribute id="language-humor">moderate</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">moderate</content_attribute>
+    <content_attribute id="social-info">moderate</content_attribute>
+    <content_attribute id="social-audio">moderate</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+    <content_attribute id="money-gambling">moderate</content_attribute>
+  </content_rating>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.riotgames.com/darkroom/original/6de55bf069bfa15afd2280e67dda35f8:3cd19fbda2bfc67c64f045fa74dd590f/league-of-legends-2015-05-15-16-44-23-62.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/d8327480da8aa07524ccd6aa3b2dcb72:ba673179f67e9337d689f384f3304ed7/league-of-legends-2015-05-15-16-45-25-41.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/d26a334af65f57eca8af18a793354332:e0ef3db7fb88b5893cfb0bbf23caedcc/league-of-legends-2015-05-15-16-48-45-73.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/da875d86da88725a05f67bd10c99d9f6:5e0b84614e71844288eec0f12ce69583/league-of-legends-2015-05-15-16-53-25-62.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/6493ccf28926363dceded2647b170e49:06dd3d8406df3fc2b2176ad952c9cbde/league-of-legends-2015-05-15-17-29-22-80.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/51e0e41adaa21047bfe7205922a2ccca:614b022b35238cc377c23a54890700b9/league-of-legends-2015-05-15-18-02-21-84.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/d33b4a16c12042749134aa9b1abbae4c:a09b52ce5ee9409fa772f1cc1ddb8c70/league-of-legends-2015-05-15-18-05-46-91.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.riotgames.com/darkroom/original/f77e1f26347cf042f18013ac820d53b0:e1aaeebb637113dddbe3b836a2c588e3/league-of-legends-2015-05-15-18-08-20-10.png</image>
+    </screenshot>
+  </screenshots>
+</component>
