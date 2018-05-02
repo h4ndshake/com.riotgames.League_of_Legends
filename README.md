@@ -78,3 +78,5 @@ If you want to contribute to this project, you will need to follow our [Code of 
 ## License
 
 This project is licensed under the [LGPL-3.0-or-later](./LICENSE.md) License.
+
+Riot Games, League of Legends and PvP.net are trademarks, services marks, or registered trademarks of Riot Games, Inc.
