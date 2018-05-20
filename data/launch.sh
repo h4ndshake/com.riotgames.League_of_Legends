@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export WINEPREFIX="${XDG_DATA_HOME}/wineprefix"
 
