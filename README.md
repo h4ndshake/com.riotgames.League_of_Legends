@@ -2,9 +2,6 @@
 
 This repository contains information to package wine and a runner, which allows us to setup a prefix, install the game and (of course) play it.
 
-**NOTE**: The official Installer doesn't like our environment for some reason, a workaround was to repack it's contents.
-[VirusTotal Scan](https://www.virustotal.com/#/file/b8bc735c85a0608fd7c81abc579cfd7a01ea1f1b903a050d8436b3ce2453a562/detection)
-
 It was based on the work of:
 
 >  - GloriousEggroll
@@ -13,6 +10,7 @@ It was based on the work of:
 Thanks to:
 
 >  - TingPing
+>  - julianrichen
 
 ## Requeriments
 
@@ -22,19 +20,7 @@ To run the flatpak you will need to install
 
 > flatpak
 
-You will also need to setup flathub, here, we're doing it in user mode, if you want to run the game in more users than your current one, just remove the `--user` flag.
-
-To setup flathub, you'ill need to run the following in a terminal:
-
-> flatpak --user remote-add --no-gpg-verify --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-After enabling flathub, you will need to install the required runtimes for the game:
-
-> flatpak --user install flathub org.freedesktop.Platform/i386/1.6
-
-> flatpak --user install flathub org.freedesktop.Platform.GL.default/i386/1.6
-
-> flatpak --user install flathub org.freedesktop.Sdk/i386/1.6
+You will also need to setup the winepak Platform and SDK, please refer to [It's repository.](https://gitlab.com/h4ndshake/winepak-sdk-images/tree/pba)
 
 ### To build
 
@@ -42,17 +28,13 @@ You will need **ALL** of the dependencies necessary to run, **PLUS**:
 
 > flatpak-builder
 
-> ccache
-
 ## Building and Installing
 
 Just run:
 
-> flatpak-builder --install --user --ccache --force-clean leagueoflegends com.riotgames.League_of_Legends.json
+> flatpak-builder --arch=i386 --install --user --force-clean leagueoflegends com.riotgames.League_of_Legends.json
 
 in your favorite terminal emulator.
-
-Again,  if you want to run the game in more users than your current one, just remove the `--user` flag.
 
 ## Running
 
@@ -64,8 +46,8 @@ But if you want to, you can run it in your favorite terminal editor using the fo
 **NOTE**: Remember to **UNCHECK** the box that says to launch the game.
 
 ## TODO
-- Make the official installer work
-- Strip out unneeded wine libraries
+- ~~Make the official installer work~~
+- ~~Strip out unneeded wine libraries~~
 
 ## Contributing
 

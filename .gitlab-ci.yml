@@ -3,7 +3,7 @@ image: ubuntu:18.04
 stages:
   - validate
 
-before_script: 
+before_script:
   - apt update
   - apt install -y software-properties-common
   - add-apt-repository -y universe
@@ -11,20 +11,20 @@ before_script:
 
 validate_appdata:
   stage: validate
-  script: 
- 
+  script:
     - appstream-util validate-relax data/application.appdata.xml
+
 validate_desktop:
   stage: validate
-  script: 
+  script:
     - desktop-file-validate data/application.desktop
 
 validate_launcher:
   stage: validate
-  script: 
+  script:
     - shellcheck data/launch.sh
 
 validate_manifest:
   stage: validate
-  script: 
+  script:
     - jsonlint-php com.riotgames.League_of_Legends.json

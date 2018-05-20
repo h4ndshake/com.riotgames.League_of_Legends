@@ -1,20 +1,13 @@
 {
   "app-id": "com.riotgames.League_of_Legends",
-  "tags":[
+  "tags": [
     "proprietary"
   ],
-  "runtime": "org.freedesktop.Platform/i386",
-  "runtime-version": "1.6",
-  "sdk": "org.freedesktop.Sdk/i386",
+  "runtime": "org.winepak.Platform",
+  "runtime-version": "staging",
+  "sdk": "org.winepak.Sdk",
   "command": "league_of_legends.sh",
-  "build-options":{
-    "cflags":"-march=i386 -g0 -Ofast",
-    "env":{
-      "WINEPREFIX":"$XDG_DATA_HOME/wineprefix",
-      "WINEDLLOVERRIDES":"mscoree=d;mshtml=d"
-    }
-  },
-  "finish-args":[
+  "finish-args": [
     "--allow=devel",
     "--allow=multiarch",
     "--filesystem=xdg-documents",
@@ -26,157 +19,9 @@
   ],
   "modules": [
     {
-      "name":"wine",
-      "buildsystem":"autotools",
-      "config-opts":[
-        "--prefix=/app",
-        "--libdir=/app/lib",
-        "--disable-tests",
-        "--disable-win16",
-        "--without-capi",
-        "--without-cms",
-        "--without-coreaudio",
-        "--without-cups",
-        "--without-curses",
-        "--without-gettext",
-        "--without-gphoto",
-        "--without-glu",
-        "--without-gsm",
-        "--without-gssapi",
-        "--without-gstreamer",
-        "--without-hal",
-        "--without-krb5",
-        "--without-ldap",
-        "--without-openal",
-        "--without-opencl",
-        "--without-opengl",
-        "--without-osmesa",
-        "--without-oss",
-        "--without-pcap",
-        "--without-sane",
-        "--without-sdl",
-        "--without-tiff",
-        "--without-udev",
-        "--without-v4l",
-        "--without-vulkan",
-        "--without-xcomposite",
-        "--without-xcursor",
-        "--without-xfixes",
-        "--without-xinerama",
-        "--without-xinput",
-        "--without-xinput2",
-        "--without-xml",
-        "--without-xshape",
-        "--without-xshm",
-        "--without-xslt",
-        "--without-xxf86vm",
-        "--without-zlib",
-        "--with-x",
-        "--with-xattr"
-      ],
-      "sources":[
-        {
-          "type":"archive",
-          "url":"https://dl.winehq.org/wine/source/3.x/wine-3.4.tar.xz",
-          "sha256":"a483247ac93f325d623a463438590b7355ec26c670af15d356b0ce6c46398e93"
-        },
-        {
-          "type":"archive",
-          "url":"https://github.com/wine-staging/wine-staging/archive/v3.4.tar.gz",
-          "sha256":"c56f5d2706e228fe4f720e9301af30e82b4a7b6c1749d0b6170e60f1cb16fe34"
-        },
-        {
-          "type":"shell",
-          "commands":[
-            "./patches/patchinstall.sh DESTDIR=$(pwd) --all"
-          ]
-        },
-        {
-          "type":"archive",
-          "url":"https://github.com/Firerat/wine-pba/archive/heap_size_envvars-v3.4.tar.gz",
-          "sha256":"a9c075f16ab628e92902cc5a6e29a076c0afb4df77bef2f3cf83b5444edbadca"
-        },
-        {
-          "type":"shell",
-          "commands":[
-            "for _p in patches/00*.patch; do patch -Np1 -i ${_p}; done"
-          ]
-        }
-      ]
-    },
-    {
-      "name":"wine-gecko",
-      "buildsystem":"simple",
-      "build-commands":[
-        "mkdir -p ${WINEPREFIX}",
-        "install -D wine_gecko-2.47-x86.msi /app/share/wine/gecko/wine_gecko-2.47-x86.msi"
-      ],
-      "no-make-install":true,
-      "sources":[
-        {
-          "type":"file",
-          "url":"http://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi",
-          "sha256":"3b8a361f5d63952d21caafd74e849a774994822fb96c5922b01d554f1677643a"
-        }
-      ]
-    },
-    {
-      "name":"wine-mono",
-      "buildsystem":"simple",
-      "build-commands":[
-        "install -D wine-mono-4.7.1.msi /app/share/wine/mono/wine-mono-4.7.1.msi"
-      ],
-      "no-make-install":true,
-      "sources":[
-        {
-          "type":"file",
-          "url":"http://dl.winehq.org/wine/wine-mono/4.7.1/wine-mono-4.7.1.msi",
-          "sha256":"2c8d5db7f833c3413b2519991f5af1f433d59a927564ec6f38a3f1f8b2c629aa"
-        }
-      ]
-    },
-    {
-      "name":"cabextract",
-      "buildsystem":"autotools",
-      "sources":[
-        {
-          "type":"archive",
-          "url":"https://www.cabextract.org.uk/cabextract-1.6.tar.gz",
-          "sha256":"cee661b56555350d26943c5e127fc75dd290b7f75689d5ebc1f04957c4af55fb"
-        }
-      ]
-    },
-    {
-      "name":"wget",
-      "buildsystem":"autotools",
-      "sources":[
-        {
-          "type":"archive",
-          "url":"https://ftp.gnu.org/gnu/wget/wget-1.19.4.tar.gz",
-          "sha256":"93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
-        }
-      ]
-    },
-    {
-      "name":"winetricks",
-      "buildsystem":"simple",
-      "build-commands":[
-        "make",
-        "make PREFIX=/app install",
-        "chmod +x /app/bin/winetricks"
-      ],
-      "sources":[
-        {
-          "type":"archive",
-          "url":"https://github.com/Winetricks/winetricks/archive/c55b9adf115030e81b5d25539c596a285fa371e5.zip",
-          "sha256":"df90f608c8c9e55762467393d4fbde020a4d6cee89231c6294f288978b302cc3"
-        }
-      ]
-    },
-    {
-      "name":"icons",
-      "buildsystem":"simple",
-      "build-commands":[
+      "name": "icons",
+      "buildsystem": "simple",
+      "build-commands": [
         "install -D --mode=644 16x16.png /app/share/icons/hicolor/16x16/apps/com.riotgames.League_of_Legends.png",
         "install -D --mode=644 32x32.png /app/share/icons/hicolor/32x32/apps/com.riotgames.League_of_Legends.png",
         "install -D --mode=644 48x48.png /app/share/icons/hicolor/48x48/apps/com.riotgames.League_of_Legends.png",
@@ -184,8 +29,8 @@
         "install -D --mode=644 128x128.png /app/share/icons/hicolor/128x128/apps/com.riotgames.League_of_Legends.png",
         "install -D --mode=644 256x256.png /app/share/icons/hicolor/256x256/apps/com.riotgames.League_of_Legends.png"
       ],
-      "no-make-install":true,
-      "sources":[
+      "no-make-install": true,
+      "sources": [
         {
           "type": "file",
           "path": "data/icons/16x16.png",
@@ -219,45 +64,58 @@
       ]
     },
     {
-      "name":"desktop",
-      "buildsystem":"simple",
-      "build-commands":[
+      "name": "desktop",
+      "buildsystem": "simple",
+      "build-commands": [
         "install -D --mode=644 application.desktop /app/share/applications/com.riotgames.League_of_Legends.desktop"
       ],
-      "no-make-install":true,
-      "sources":[
+      "no-make-install": true,
+      "sources": [
         {
-          "type":"file",
-          "path":"data/application.desktop"
+          "type": "file",
+          "path": "data/application.desktop"
         }
       ]
     },
     {
-      "name":"appdata",
-      "buildsystem":"simple",
-      "build-commands":[
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
         "install -D --mode=644 application.appdata.xml /app/share/metainfo/com.riotgames.League_of_Legends.appdata.xml"
       ],
-      "no-make-install":true,
-      "sources":[
+      "no-make-install": true,
+      "sources": [
         {
-          "type":"file",
-          "path":"data/appdata.xml"
+          "type": "file",
+          "path": "data/application.appdata.xml"
         }
       ]
     },
     {
-      "name":"launcher",
-      "buildsystem":"simple",
-      "build-commands":[
-        "install --directory ${WINEPREFIX}",
+      "name": "launcher",
+      "buildsystem": "simple",
+      "build-commands": [
         "install -D --mode=755 launch.sh /app/bin/league_of_legends.sh"
       ],
-      "no-make-install":true,
-      "sources":[
+      "no-make-install": true,
+      "sources": [
         {
-          "type":"file",
-          "path":"data/launch.sh"
+          "type": "file",
+          "path": "data/launch.sh"
+        }
+      ]
+    },
+    {
+      "name": "dlloverrides",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -D --mode=644 dlloverrides.reg /app/dlloverrides.reg"
+      ],
+      "no-make-install": true,
+      "sources": [
+        {
+          "type": "file",
+          "path": "data/dlloverrides.reg"
         }
       ]
     }
