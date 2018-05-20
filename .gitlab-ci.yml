@@ -12,8 +12,8 @@ before_script:
 validate_appdata:
   stage: validate
   script: 
-    - appstream-util validate data/appdata.xml
  
+    - appstream-util validate-relax data/application.appdata.xml
 validate_desktop:
   stage: validate
   script: 

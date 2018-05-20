@@ -236,7 +236,7 @@
       "name":"appdata",
       "buildsystem":"simple",
       "build-commands":[
-        "install -D --mode=644 appdata.xml /app/share/metainfo/com.riotgames.League_of_Legends.xml"
+        "install -D --mode=644 application.appdata.xml /app/share/metainfo/com.riotgames.League_of_Legends.appdata.xml"
       ],
       "no-make-install":true,
       "sources":[
