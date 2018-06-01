@@ -25,7 +25,10 @@ set_wine_settings() {
   echo "Setting wine settings..."
   winetricks --unattended "${WINE_SETTINGS[@]}"
 
-  echo "Configuring DLL Overrides"
+  echo "Disabling winemenubuilder..."
+  "${WINE}" reg add 'HKEY_CURRENT_USER\Software\Wine\DllOverrides' /v winemenubuilder.exe /d '' /f
+
+  echo "Configuring DLL Overrides..."
   "${WINE}" reg add 'HKEY_CURRENT_USER\Software\Wine\DllOverrides' /v api-ms-win-core-console-l1-1-0.dll /d native,builtin /f
   "${WINE}" reg add 'HKEY_CURRENT_USER\Software\Wine\DllOverrides' /v api-ms-win-core-datetime-l1-1-0.dll /d native,builtin /f
   "${WINE}" reg add 'HKEY_CURRENT_USER\Software\Wine\DllOverrides' /v api-ms-win-core-debug-l1-1-0.dll /d native,builtin /f
