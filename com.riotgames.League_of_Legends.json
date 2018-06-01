@@ -105,19 +105,5 @@
         }
       ]
     },
-    {
-      "name": "dlloverrides",
-      "buildsystem": "simple",
-      "build-commands": [
-        "install -D --mode=644 dlloverrides.reg /app/dlloverrides.reg"
-      ],
-      "no-make-install": true,
-      "sources": [
-        {
-          "type": "file",
-          "path": "data/dlloverrides.reg"
-        }
-      ]
-    }
   ]
 }

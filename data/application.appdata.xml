@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2018 Rafael Julio <rafael_julio@protonmail.com> -->
 <component type="desktop-application">
   <id>com.riotgames.League_of_Legends</id>
-  <metadata_license>MIT</metadata_license>
-  <project_license>LGPL-3.0-or-later</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
   <name>League of Legends</name>
   <summary>Join the League, become a legend</summary>
 
@@ -31,7 +30,6 @@
 
   <categories>
     <category>Game</category>
-    <category>ActionGame</category>
     <category>StrategyGame</category>
   </categories>
 
@@ -95,6 +93,4 @@
       <image>https://www.riotgames.com/darkroom/original/f77e1f26347cf042f18013ac820d53b0:e1aaeebb637113dddbe3b836a2c588e3/league-of-legends-2015-05-15-18-08-20-10.png</image>
     </screenshot>
   </screenshots>
-
-  <update_contact>incoming+h4ndshake/com.riotgames.League_of_Legends@incoming.gitlab.com</update_contact>
 </component>
