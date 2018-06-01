@@ -4,7 +4,7 @@
     "proprietary"
   ],
   "runtime": "org.winepak.Platform",
-  "runtime-version": "staging",
+  "runtime-version": "3.8-staging-pba",
   "sdk": "org.winepak.Sdk",
   "command": "league_of_legends.sh",
   "finish-args": [

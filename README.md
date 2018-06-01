@@ -20,7 +20,7 @@ To run the flatpak you will need to install
 
 > flatpak
 
-You will also need to setup the winepak Platform and SDK, please refer to [It's repository.](https://gitlab.com/h4ndshake/winepak-sdk-images/tree/pba)
+You will also need to setup the winepak Platform and SDK, please refer to [It's repository.](https://github.com/h4ndshake/winepak-sdk-images)
 
 ### To build
 
