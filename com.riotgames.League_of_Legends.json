@@ -8,7 +8,6 @@
   "sdk": "org.winepak.Sdk",
   "command": "league_of_legends.sh",
   "finish-args": [
-    "--allow=devel",
     "--allow=multiarch",
     "--filesystem=xdg-documents",
     "--share=network",
